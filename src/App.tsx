@@ -26,12 +26,15 @@ export const App: React.FC = () => {
     setActivePage(1);
   }, [perPageInit]);
 
+  const startIndex = (activePage - 1) * perPageInit + 1;
+  const endIndex = Math.min(activePage * perPageInit, initList.length);
+
   return (
     <div className="container">
       <h1>Items with Pagination</h1>
 
       <p className="lead" data-cy="info">
-        Page 1 (items 1 - 5 of 42)
+        Page {activePage} (items {startIndex} - {endIndex} of {initList.length})
       </p>
 
       <FormGroup
