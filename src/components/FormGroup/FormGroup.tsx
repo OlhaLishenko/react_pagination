@@ -29,7 +29,7 @@ export const FormGroup: React.FC<FormGroupProps> = ({
 
     setVisibleList(itemsInThePage);
     setPages(getInitialPages(maxAmount, perPageInit));
-  }, [perPageInit, activePage]);
+  }, [perPageInit, activePage, initList]);
 
   return (
     <div className="form-group row">

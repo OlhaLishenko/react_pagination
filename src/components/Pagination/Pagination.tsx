@@ -10,7 +10,7 @@ type PaginationProps = {
   initList: number[];
   perPageInit: number;
 
-  setVisibleList: number[];
+  setVisibleList: (list: number[]) => void;
 };
 
 export const Pagination: React.FC<PaginationProps> = ({

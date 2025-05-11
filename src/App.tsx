@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { Pagination } from './components/Pagination';
 import { FormGroup } from './components/FormGroup';
@@ -21,6 +21,10 @@ export const App: React.FC = () => {
   const [visibleList, setVisibleList] = useState(startList);
   const [pages, setPages] = useState(initAmountOfPages);
   const [activePage, setActivePage] = useState(1);
+
+  useEffect(() => {
+    setActivePage(1);
+  }, [perPageInit]);
 
   return (
     <div className="container">
